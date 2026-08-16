@@ -1,0 +1,6 @@
+/* Animo Group Holdings transparent logo */
+.logo{display:flex;align-items:center;flex:0 0 auto}
+.logo img{height:62px;width:auto;max-width:245px;object-fit:contain;filter:drop-shadow(0 0 2px rgba(255,255,255,.55)) drop-shadow(0 0 7px rgba(200,169,90,.28));transition:filter .35s ease,transform .35s ease}
+.logo:hover img{filter:drop-shadow(0 0 3px rgba(255,255,255,.7)) drop-shadow(0 0 11px rgba(200,169,90,.4));transform:translateY(-1px)}
+@media(max-width:900px){.logo img{height:50px;max-width:190px}}
+@media(max-width:600px){.logo img{height:46px;max-width:175px}}
