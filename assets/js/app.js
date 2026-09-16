@@ -4,13 +4,15 @@
 
 const navbar = document.querySelector(".navbar");
 
-window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-        navbar.classList.add("scrolled");
-    } else {
-        navbar.classList.remove("scrolled");
-    }
-});
+if (navbar) {
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add("scrolled");
+        } else {
+            navbar.classList.remove("scrolled");
+        }
+    });
+}
 
 // ==========================================
 // Mobile Navigation
@@ -20,7 +22,27 @@ const menuToggle = document.querySelector(".menu-toggle");
 const navMenu = document.querySelector(".nav-menu");
 
 if (menuToggle && navMenu) {
+    const navId = "primary-navigation";
+    navMenu.id = navId;
+    menuToggle.setAttribute("aria-controls", navId);
     menuToggle.setAttribute("aria-expanded", "false");
+
+    const syncMenuForViewport = () => {
+        if (window.innerWidth > 900) {
+            closeMobileMenu();
+            navMenu.style.display = "flex";
+            navMenu.style.position = "static";
+            navMenu.style.flexDirection = "row";
+            navMenu.style.gap = "34px";
+            navMenu.style.padding = "0";
+            navMenu.style.background = "transparent";
+            navMenu.style.backdropFilter = "none";
+            navMenu.style.border = "0";
+            navMenu.style.boxShadow = "none";
+        } else if (!navMenu.classList.contains("mobile-open")) {
+            navMenu.style.display = "none";
+        }
+    };
 
     menuToggle.addEventListener("click", () => {
         const isOpen = navMenu.classList.toggle("mobile-open");
@@ -49,22 +71,15 @@ if (menuToggle && navMenu) {
         link.addEventListener("click", closeMobileMenu);
     });
 
-    window.addEventListener("resize", () => {
-        if (window.innerWidth > 900) {
+    document.addEventListener("keydown", event => {
+        if (event.key === "Escape" && navMenu.classList.contains("mobile-open")) {
             closeMobileMenu();
-            navMenu.style.display = "flex";
-            navMenu.style.position = "static";
-            navMenu.style.flexDirection = "row";
-            navMenu.style.gap = "34px";
-            navMenu.style.padding = "0";
-            navMenu.style.background = "transparent";
-            navMenu.style.backdropFilter = "none";
-            navMenu.style.border = "0";
-            navMenu.style.boxShadow = "none";
-        } else if (!navMenu.classList.contains("mobile-open")) {
-            navMenu.style.display = "none";
+            menuToggle.focus();
         }
     });
+
+    window.addEventListener("resize", syncMenuForViewport);
+    syncMenuForViewport();
 
     function closeMobileMenu() {
         navMenu.classList.remove("mobile-open");
