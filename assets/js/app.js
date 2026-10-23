@@ -57,10 +57,10 @@ if (menuToggle && navMenu) {
             navMenu.style.flexDirection = "column";
             navMenu.style.gap = "0";
             navMenu.style.padding = "12px";
-            navMenu.style.background = "rgba(11,31,58,.97)";
+            navMenu.style.background = "rgba(17,17,17,.98)";
             navMenu.style.backdropFilter = "blur(20px)";
             navMenu.style.borderRadius = "16px";
-            navMenu.style.border = "1px solid rgba(255,255,255,.1)";
+            navMenu.style.border = "1px solid rgba(255,255,255,.12)";
             navMenu.style.boxShadow = "0 20px 45px rgba(0,0,0,.2)";
         } else {
             closeMobileMenu();
