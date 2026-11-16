@@ -230,3 +230,8 @@ body:not(.home-redesign){--primary:#111;--secondary:#e80c0c}
 
 /* Keep supporting-page footers within the refreshed black / red brand system. */
 body:not(.home-redesign) .site-footer{background:#111;color:#fff}
+
+/* Symbol-only navigation identity: preserve the original Á silhouette. */
+.navbar .logo img{height:54px;width:auto;max-width:none;object-fit:contain}
+@media(max-width:900px){.navbar .logo img{height:46px;max-width:none}}
+@media(max-width:600px){.navbar .logo img{height:42px;max-width:none}}
