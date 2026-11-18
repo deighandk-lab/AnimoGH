@@ -91,3 +91,37 @@ if (menuToggle && navMenu) {
         }
     }
 }
+
+/* Service-aware quotation form and privacy-safe interaction events */
+const quoteService = document.querySelector('#quote-service');
+function trackAnimoEvent(name, details) {
+    if (typeof window.gtag === 'function') window.gtag('event', name, details);
+}
+if (quoteService) {
+    const form = quoteService.closest('form');
+    const groups = form.querySelectorAll('[data-quote-group]');
+    const updateQuote = () => {
+        const service = quoteService.value;
+        const active = ['Printing','Branding & Apparel','Vehicle Branding'].includes(service) ? 'print' :
+            service === 'Web & App Development' ? 'web' :
+            service === 'Digital Marketing & Design' ? 'marketing' : '';
+        groups.forEach(group => {
+            const show = group.dataset.quoteGroup === active;
+            group.hidden = !show;
+            group.querySelectorAll('input,select,textarea').forEach(field => field.disabled = !show);
+        });
+    };
+    quoteService.addEventListener('change', updateQuote);
+    updateQuote();
+    form.addEventListener('submit', () => trackAnimoEvent('quote_submit_attempt', {service_category: quoteService.value}));
+}
+const whatsapp = document.createElement('a');
+whatsapp.className = 'floating-whatsapp';
+whatsapp.href = 'https://wa.me/27687143564?text=' + encodeURIComponent('Hi Animo! I would like to enquire about your services.');
+whatsapp.setAttribute('aria-label','Chat with Animo on WhatsApp');
+whatsapp.textContent = 'WhatsApp';
+document.body.appendChild(whatsapp);
+document.addEventListener('click', event => {
+    const link = event.target.closest('a');
+    if (link && link.href.startsWith('https://wa.me/')) trackAnimoEvent('whatsapp_click', {placement: link.classList.contains('floating-whatsapp') ? 'floating' : 'page'});
+});
