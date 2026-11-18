@@ -240,3 +240,8 @@ body:not(.home-redesign) .site-footer{background:#111;color:#fff}
 .red-footer .footer-brand-image{display:inline-flex;align-items:center;flex:0 0 auto}
 .red-footer .footer-brand-image img{display:block;width:auto;height:auto;max-height:80px;max-width:210px;object-fit:contain}
 @media(max-width:600px){.red-footer .footer-brand-image img{max-height:65px;max-width:180px}}
+
+/* Original client artwork, without decorative monogram overlay. */
+.project-monogram.project-client-logo{background:#fff;padding:32px;box-sizing:border-box}
+.project-client-logo:after{display:none}
+.project-client-logo img{display:block;width:100%;max-width:300px;height:auto;object-fit:contain}
