@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://deighandk-lab.github.io/AnimoGH/sitemap.xml
+Sitemap: https://animogroup.pages.dev/sitemap.xml
