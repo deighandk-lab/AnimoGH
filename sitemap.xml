@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://deighandk-lab.github.io/AnimoGH/</loc></url>
-  <url><loc>https://deighandk-lab.github.io/AnimoGH/about.html</loc></url>
-  <url><loc>https://deighandk-lab.github.io/AnimoGH/services.html</loc></url>
-  <url><loc>https://deighandk-lab.github.io/AnimoGH/industries.html</loc></url>
-  <url><loc>https://deighandk-lab.github.io/AnimoGH/portfolio.html</loc></url>
-  <url><loc>https://deighandk-lab.github.io/AnimoGH/pricing.html</loc></url>
-  <url><loc>https://deighandk-lab.github.io/AnimoGH/process.html</loc></url>
-  <url><loc>https://deighandk-lab.github.io/AnimoGH/contact.html</loc></url>
+  <url><loc>https://animogroup.pages.dev/</loc></url>
+  <url><loc>https://animogroup.pages.dev/about</loc></url>
+  <url><loc>https://animogroup.pages.dev/services</loc></url>
+  <url><loc>https://animogroup.pages.dev/industries</loc></url>
+  <url><loc>https://animogroup.pages.dev/portfolio</loc></url>
+  <url><loc>https://animogroup.pages.dev/pricing</loc></url>
+  <url><loc>https://animogroup.pages.dev/process</loc></url>
+  <url><loc>https://animogroup.pages.dev/contact</loc></url>
+  <url><loc>https://animogroup.pages.dev/portfolio-apparel</loc></url>
+  <url><loc>https://animogroup.pages.dev/portfolio-printing</loc></url>
+  <url><loc>https://animogroup.pages.dev/portfolio-web</loc></url>
 </urlset>
