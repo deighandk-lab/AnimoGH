@@ -11,7 +11,7 @@ if (navbar) {
         } else {
             navbar.classList.remove("scrolled");
         }
-    });
+    }, { passive: true });
 }
 
 // ==========================================
@@ -47,6 +47,7 @@ if (menuToggle && navMenu) {
     menuToggle.addEventListener("click", () => {
         const isOpen = navMenu.classList.toggle("mobile-open");
         menuToggle.setAttribute("aria-expanded", String(isOpen));
+        menuToggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
 
         if (isOpen) {
             navMenu.style.display = "flex";
@@ -84,6 +85,7 @@ if (menuToggle && navMenu) {
     function closeMobileMenu() {
         navMenu.classList.remove("mobile-open");
         menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation menu");
         if (window.innerWidth <= 900) {
             navMenu.style.display = "none";
         }
