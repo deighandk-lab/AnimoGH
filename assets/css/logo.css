@@ -253,3 +253,5 @@ body:not(.home-redesign) .site-footer{background:#111;color:#fff}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important;animation-iteration-count:1!important}}
 
 .privacy-copy{max-width:850px;padding-top:56px;padding-bottom:80px;line-height:1.75}.privacy-copy h2{font-size:1.4rem;margin:2rem 0 .65rem}.privacy-copy p{margin-bottom:1rem}.privacy-copy a{text-decoration:underline;overflow-wrap:anywhere}
+
+.quote-details[hidden]{display:none!important}.quote-details:not([hidden]){display:grid;gap:16px;padding:16px;border:1px solid #ddd;border-radius:12px}.floating-whatsapp{position:fixed;right:max(18px,env(safe-area-inset-right));bottom:max(18px,env(safe-area-inset-bottom));z-index:900;display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 20px;border-radius:999px;background:#126b42;color:#fff!important;font-weight:700;text-decoration:none;box-shadow:0 5px 20px #0003}.floating-whatsapp:hover{background:#0b5232}.site-footer{padding-bottom:max(80px,env(safe-area-inset-bottom))}
